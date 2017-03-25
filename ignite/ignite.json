@@ -1,5 +1,5 @@
 {
-  "createdWith": "2.0.0-beta.6",
+  "createdWith": "2.0.0-beta.8",
   "examples": "classic",
   "generators": {
     "component": "ignite-ir-boilerplate-2016",
