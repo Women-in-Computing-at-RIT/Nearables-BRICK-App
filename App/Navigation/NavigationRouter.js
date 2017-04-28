@@ -1,67 +1,40 @@
 import React, { Component } from 'react'
-import { Scene, Router } from 'react-native-router-flux'
+import { Scene, Router, Reducer, Actions, ActionConst } from 'react-native-router-flux'
+
+//The three page scenes we wil be handling
 import CurrentEvents from '../Containers/CurrentEvents'
 import PastEvents from '../Containers/PastEvents'
 import Scan from '../Containers/Scanner'
-import { Text } from 'react-native'
+import TabIcon from '../Components/TabIcon'
+import { ScrollView } from 'react-native'
+import TabElement from '../Components/TabElement'
+import MainScreen from '../Containers/MainScreen'
 
 
 /* **************************
 * Documentation: https://github.com/aksonov/react-native-router-flux
 ***************************/
-const TabIcon = ({ selected, title }) => {
-  return (
-    <Text style={{
-      color: selected ? 'black' :'white',
-      textAlign:'center',
-      borderBottomWidth: selected ? 5 : 0,
-      fontWeight: 'bold'
-    }}>{title}</Text>
-  );
-}
 
-class NavigationRouter extends Component {
+const reducerCreate = params=>{
+  const defaultReducer = Reducer(params);
+  return (state, action)=>{
+    console.log("ACTION:", action);
+    return defaultReducer(state, action);
+  }
+};
+
+
+export default class NavigationRouter extends Component {
   render () {
     return (
-      <Router>
+      <Router createReducer={reducerCreate}>
+        <ScrollView key="scroll">
         <Scene key="root">
-          {/* Tab Container */}
-          <Scene
-            key="tabbar"
-            tabs={true}
-            tabBarStyle={{backgroundColor: '#bb9700', borderColor:"black"}}
-          >
-            {/* Current Events Scene */}
-            <Scene key="curr" title="Current Event" icon={TabIcon}>
-              <Scene
-                key="CurrentEvents"
-                component={CurrentEvents}
-                title="Current Events"
-              />
-            </Scene>
-
-            {/* Past Events Scene */}
-            <Scene key="past" title="Past Events" icon={TabIcon}>
-              <Scene
-                key="PastEvents"
-                component={PastEvents}
-                title="Past Events"
-              />
-            </Scene>
-
-            {/* Scan Scene */}
-            <Scene key="scan" title="QR Code Scanner" icon={TabIcon}>
-              <Scene
-                key="Scan"
-                component={Scan}
-                title="QR Code Scanner"
-              />
-            </Scene>
-          </Scene>
+          <Scene key="main" hideNavBar={true} component={MainScreen}/>
         </Scene>
-      </Router>
+        </ScrollView>
+    </Router>
     )
   }
 }
 
-export default NavigationRouter

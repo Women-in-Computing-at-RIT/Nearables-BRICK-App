@@ -4,7 +4,7 @@ import { ApplicationStyles, Metrics, Colors } from '../../Themes/'
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   messageBox:{
-    backgroundColor:'#bb9700',
+    backgroundColor:'#ffffff',
     width:300,
     paddingTop:10,
     paddingBottom:20,
@@ -14,13 +14,15 @@ export default StyleSheet.create({
   },
   messageBoxTitleText:{
     fontWeight:'bold',
-    color:'#fff',
+    color:'#000000',
     textAlign:'center',
     fontSize:20,
-    marginBottom:10
+    marginBottom:10,
+    borderBottomWidth: 5
   },
   messageBoxBodyText:{
-    color:'#fff',
+    color:'#000000',
+    textAlign:'center',
     fontSize:16
   },
   content:{
@@ -28,5 +30,5 @@ export default StyleSheet.create({
     flexDirection:'column',
     alignItems:'center',
     justifyContent:'center',
-  },
+  }
 })
