@@ -30,5 +30,5 @@ export default StyleSheet.create({
     flexDirection:'column',
     alignItems:'center',
     justifyContent:'center',
-  }
+  },
 })

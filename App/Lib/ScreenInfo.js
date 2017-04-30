@@ -3,8 +3,8 @@ import PastEvents from '../Containers/PastEvents'
 import Scanner from '../Containers/Scanner'
 
 export const ScreenNames = {
-  CURRENT: 'CurrentEvents',
-  PAST: 'PastEvents',
+  CURRENT: 'Current Events',
+  PAST: 'Past Events',
   SCAN: 'Scan',
 };
 

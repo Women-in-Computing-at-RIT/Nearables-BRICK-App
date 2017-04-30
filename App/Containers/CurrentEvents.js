@@ -4,13 +4,11 @@ import { connect } from 'react-redux'
 
 // Styles
 import styles from './Styles/ScreenStyles'
+import { ScreenNames } from '../Lib/ScreenInfo'
 import RoundedButton from '../Components/RoundedButton'
-
-import { ScreenNames } from '../Lib/ScreenInfo';
-
+import { Actions as NavigationActions } from 'react-native-router-flux';
 
 class CurrentEvents extends React.Component {
-
   render() {
     return (
       <View style={styles.mainContainer}>
@@ -26,7 +24,7 @@ class CurrentEvents extends React.Component {
           </View>
         </View>
         {/* Defining Button */}
-        <RoundedButton text="Press to [Scan QR Code]" key="QRButton" onPress={this.handleTabChangeRequest(ScreenNames.SCAN)} />
+        <RoundedButton text="Press to [Scan QR Code]" key="QRButton" onPress={NavigationActions.Scan} />
         <View style={styles.content}>
           <View style={styles.messageBox}>
             <View>
@@ -37,14 +35,10 @@ class CurrentEvents extends React.Component {
             </View>
           </View>
         </View>
-
-        {/* END NEW CODE */}
-
       </View>
     );
   }
 }
-
 
 const mapStateToProps = (state) => {
   return {

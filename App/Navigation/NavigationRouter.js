@@ -1,13 +1,6 @@
 import React, { Component } from 'react'
-import { Scene, Router, Reducer, Actions, ActionConst } from 'react-native-router-flux'
-
-//The three page scenes we wil be handling
-import CurrentEvents from '../Containers/CurrentEvents'
-import PastEvents from '../Containers/PastEvents'
-import Scan from '../Containers/Scanner'
-import TabIcon from '../Components/TabIcon'
+import { Scene, Router, Reducer } from 'react-native-router-flux'
 import { ScrollView } from 'react-native'
-import TabElement from '../Components/TabElement'
 import MainScreen from '../Containers/MainScreen'
 
 
