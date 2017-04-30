@@ -24,6 +24,7 @@ export default class NavigationRouter extends Component {
         <ScrollView key="scroll">
         <Scene key="root">
           <Scene key="main" hideNavBar={true} component={MainScreen}/>
+          <Scene key="scanner" hideNavBar={true} component={MainScreen.SCAN}/>
         </Scene>
         </ScrollView>
     </Router>

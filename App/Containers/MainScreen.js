@@ -16,11 +16,6 @@ export default class MainScreen extends React.Component {
     this.setState({ currentTab: tabName });
   }
 
-  handleTabChangeRequest = (to) => {
-    if (to in ScreenNames)
-      this.handleTabPress(to);
-  }
-
   render() {
     const { currentTab } = this.state;
 
