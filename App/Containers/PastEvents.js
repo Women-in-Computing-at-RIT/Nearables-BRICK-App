@@ -9,7 +9,7 @@ import { Icon } from 'react-native-elements'
 class PastEvents extends React.Component {
   render() {
     return (
-      <View style={styles.mainContainer}>
+      <View style={styles.mainScreen}>
         {/* START NEW CODE */}
         <View style={styles.content}>
           <View style={styles.messageBox}>

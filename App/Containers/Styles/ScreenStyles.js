@@ -31,4 +31,8 @@ export default StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
   },
+  mainScreen: {
+    flex: 1,
+    backgroundColor:"#ffb2e3"
+  },
 })
