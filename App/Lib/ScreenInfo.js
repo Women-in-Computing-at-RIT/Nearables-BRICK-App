@@ -5,7 +5,7 @@ import Scanner from '../Containers/Scanner'
 export const ScreenNames = {
   CURRENT: 'Current Events',
   PAST: 'Past Events',
-  SCAN: 'Scan',
+  // SCAN: 'Scan',
 };
 
 export const TabMetadata = {
@@ -17,8 +17,8 @@ export const TabMetadata = {
     Element: PastEvents,
     icon: 'reorder',
   },
-  [ScreenNames.SCAN]: {
-    Element: Scanner,
-    icon: 'scanner',
-  },
+  // [ScreenNames.SCAN]: {
+  //   Element: Scanner,
+  //   icon: 'scanner',
+  // },
 }

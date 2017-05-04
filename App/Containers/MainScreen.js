@@ -30,8 +30,9 @@ export default class MainScreen extends React.Component {
               titleStyle={{fontWeight: 'bold', fontSize: 10}}
               selectedTitleStyle={{marginTop: -1, marginBottom: 6}}
               selected={currentTab === name}
+              tabStyle={{backgroundColor:"#fff"}}
               title={name}
-              renderIcon={() => <Icon color={'#bb8500'} name={icon} size={30}/>}
+              renderIcon={() => <Icon color={"#ff7729"} name={icon} size={30}/>}
               renderSelectedIcon={() => <Icon color={'#6296f9'} name={icon} size={30}/>}
               onPress={this.handleTabPress(name)}>
               { Element ? <Element /> : <div/> }
