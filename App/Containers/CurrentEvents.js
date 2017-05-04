@@ -1,11 +1,12 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import { Image, Text, View } from 'react-native'
 import { connect } from 'react-redux'
 
 // Styles
 import styles from './Styles/ScreenStyles'
-import RoundedButton from '../Components/RoundedButton'
 import {Actions as NavigationActions} from 'react-native-router-flux'
+import { Button } from 'react-native-elements'
+import Metrics from '../Themes/Metrics'
 
 class CurrentEvents extends React.Component {
   render() {
@@ -25,8 +26,20 @@ class CurrentEvents extends React.Component {
             <Text style={styles.messageBoxBodyText}>You aren't currently participating in a BRICK Event.</Text>
           </View>
         </View>
-        {/* Defining Button */}
-        <RoundedButton text="Press to [Scan QR Code]" key="QRButton" onPress={NavigationActions.scan}/>
+        {/* Defining Button QR Code */}
+        <Button
+          raised
+          buttonStyle={{
+            backgroundColor:"#ff7729",
+            height: 45,
+            borderRadius: 5,
+            marginHorizontal: Metrics.section,
+            marginVertical: Metrics.baseMargin,
+          }}
+          icon={{name: 'camera'}}
+          title='Press to [Scan QR Code]'
+          onPress={NavigationActions.scan}
+        />
         <View style={styles.content}>
           <View style={styles.messageBox}>
             <Text style={styles.messageBoxTitleText}>Instructions</Text>

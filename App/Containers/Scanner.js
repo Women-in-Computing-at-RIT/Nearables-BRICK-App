@@ -27,13 +27,11 @@ class Scanner extends React.Component {
   onBarCodeRead(result) {
     if(this.barCodeFlag){
       this.barCodeFlag = false;
-
       setTimeout(function () {
         Vibration.vibrate();
         this.props.navigator.pop();
         console.log(result);
       }, 1000)
-
     }
   }
 }

@@ -26,6 +26,7 @@ export default class MainScreen extends React.Component {
             const {Element, icon} = TabMetadata[name];
 
             return (<Tab
+              raised
               key={idx}
               titleStyle={{fontWeight: 'bold', fontSize: 10}}
               selectedTitleStyle={{marginTop: -1, marginBottom: 6}}
