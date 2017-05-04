@@ -4,9 +4,8 @@ import { connect } from 'react-redux'
 
 // Styles
 import styles from './Styles/ScreenStyles'
-import { TabMetadata } from '../Lib/ScreenInfo'
 import RoundedButton from '../Components/RoundedButton'
-import {Actions as NavigationActions } from 'react-native-router-flux'
+import {Actions as NavigationActions} from 'react-native-router-flux'
 
 class CurrentEvents extends React.Component {
   render() {
@@ -24,7 +23,7 @@ class CurrentEvents extends React.Component {
           </View>
         </View>
         {/* Defining Button */}
-        <RoundedButton text="Press to [Scan QR Code]" key="QRButton" onPress={NavigationActions.scanner}/>
+        <RoundedButton text="Press to [Scan QR Code]" key="QRButton" onPress={NavigationActions.scan}/>
         <View style={styles.content}>
           <View style={styles.messageBox}>
             <View>

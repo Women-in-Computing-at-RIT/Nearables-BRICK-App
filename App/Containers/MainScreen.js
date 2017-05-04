@@ -18,7 +18,6 @@ export default class MainScreen extends React.Component {
 
   render() {
     const { currentTab } = this.state;
-
     return (
       <Tabs>
         {

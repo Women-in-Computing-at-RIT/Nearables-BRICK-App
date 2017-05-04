@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Scene, Router, Reducer } from 'react-native-router-flux'
 import { ScrollView } from 'react-native'
 import MainScreen from '../Containers/MainScreen'
+import Scanner from '../Containers/Scanner'
 
 
 /* **************************
@@ -24,7 +25,7 @@ export default class NavigationRouter extends Component {
         <ScrollView key="scroll">
         <Scene key="root">
           <Scene key="main" hideNavBar={true} component={MainScreen}/>
-          <Scene key="scanner" hideNavBar={true} component={MainScreen.SCAN}/>
+          <Scene key="scan" hideNavBar={true} component={Scanner}/>
         </Scene>
         </ScrollView>
     </Router>
