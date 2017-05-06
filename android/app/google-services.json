@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "759607781244",
+    "firebase_url": "https://brick-game-ea6a1.firebaseio.com",
+    "project_id": "brick-game-ea6a1",
+    "storage_bucket": "brick-game-ea6a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759607781244:android:5b8fa6d8a53e0d0e",
+        "android_client_info": {
+          "package_name": "com.brickgameapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "759607781244-4gnvusu3ifhs1sjff1eu988tg51vp6k1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD74IctBCuxUnbxawkhA_dlPXRLny-Ge0Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

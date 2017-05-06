@@ -1,13 +1,39 @@
 import React from 'react'
 import { StyleSheet, Text, View, Vibration } from 'react-native'
+import { Actions } from 'react-native-router-flux';
+import { QRCodes } from '../Lib/qrcode';
 import { connect } from 'react-redux'
+
+import EventActions from '../Redux/EventRedux';
 
 
 // Styles
 import Camera from 'react-native-camera'
 
 class Scanner extends React.Component {
+  
+  static propTypes = {
+    onScan: React.PropTypes.func,
+  }
+  
+  constructor (props) {
+    super(props);
+    
+    this.state = {
+      active: false,
+    }
+  }
+  
+  componentWillMount() {
+    this.setState({ active: true });
+  }
+  
+  componentWillUnmount() {
+    this.setState({ active: false });
+  }
+  
   render() {
+    console.log(this.props);
     return (
       <View style={styles.container}>
         <Camera
@@ -17,22 +43,28 @@ class Scanner extends React.Component {
           style={styles.preview}
           aspect={Camera.constants.Aspect.fill}
           cameraType={Camera.constants.Type.back}
-          onBarCodeRead={this.onBarCodeRead}>
-          <Text style={styles.capture}>Capturing QR Code</Text>
+          onBarCodeRead={this.onBarCodeRead}
+          barCodeTypes={['qr']}
+          barcodeScannerEnabled={this.state.active}
+        >
+          <Text style={styles.capture}>Focus on QR Code</Text>
         </Camera>
       </View>
     );
   }
 
-  onBarCodeRead(result) {
-    if(this.barCodeFlag){
-      this.barCodeFlag = false;
-      setTimeout(function () {
-        Vibration.vibrate();
-        this.props.navigator.pop();
-        console.log(result);
-      }, 1000)
-    }
+  onBarCodeRead = (result) => {
+    Vibration.vibrate();
+    Actions.pop();
+    this.setState({ state: false });
+    
+    const data = QRCodes.event.parse(result.data);
+    
+    if (data.length === 1)
+      this.props.onScan(data);
+    
+    console.log(result);
+    console.log(data);
   }
 }
 
@@ -64,6 +96,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    onScan: (data) => dispatch(EventActions.scannedEvent(data)),
   }
 }
 

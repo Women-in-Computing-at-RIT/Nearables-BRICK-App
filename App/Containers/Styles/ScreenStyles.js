@@ -33,6 +33,6 @@ export default StyleSheet.create({
   },
   mainScreen: {
     flex: 1,
-    backgroundColor:"#ffb2e3"
+    backgroundColor:"#ff7729"
   },
 })

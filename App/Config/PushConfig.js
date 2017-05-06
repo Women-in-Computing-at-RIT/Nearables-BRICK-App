@@ -14,7 +14,7 @@ PushNotification.configure({
   },
 
   // ANDROID ONLY: (optional) GCM Sender ID.
-  senderID: 'YOUR GCM SENDER ID',
+  senderID: 'brick-game-app',
 
   // IOS ONLY (optional): default: all - Permissions to register.
   permissions: {
@@ -34,5 +34,5 @@ PushNotification.configure({
     * - if not, you must call PushNotificationsHandler.requestPermissions() later
     * This example app shows how to best call requestPermissions() later.
     */
-  requestPermissions: false
+  requestPermissions: true
 })

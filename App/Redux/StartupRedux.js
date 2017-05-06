@@ -1,9 +1,15 @@
-import { createActions } from 'reduxsauce'
+import keyMirror from 'keymirror'
 
 /* ------------- Types and Action Creators ------------- */
 
-const { Types, Creators } = createActions({
-  startup: null
+const Types = keyMirror({
+  STARTUP: null,
+})
+
+const Creators = {}
+
+Creators.startup = () => ({
+  type: Types.STARTUP,
 })
 
 export const StartupTypes = Types

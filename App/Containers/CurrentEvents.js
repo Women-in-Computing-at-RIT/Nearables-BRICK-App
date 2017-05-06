@@ -2,6 +2,8 @@ import React from 'react'
 import { Image, Text, View } from 'react-native'
 import { connect } from 'react-redux'
 
+import { getCurrentEvent } from '../Redux/EventRedux';
+
 // Styles
 import styles from './Styles/ScreenStyles'
 import {Actions as NavigationActions} from 'react-native-router-flux'
@@ -22,8 +24,13 @@ class CurrentEvents extends React.Component {
         {/* START NEW CODE */}
         <View style={styles.content}>
           <View style={styles.messageBox}>
-            <Text style={styles.messageBoxTitleText}>Alert</Text>
-            <Text style={styles.messageBoxBodyText}>You aren't currently participating in a BRICK Event.</Text>
+            { this.props.event ?
+              [<Text key={1} style={styles.messageBoxTitleText}>{this.props.event.name}</Text>,
+              <Text key={2} style={styles.messageBoxBodyText}>{this.props.event.location.label}</Text>]
+            : [<Text key={1} style={styles.messageBoxTitleText}>Alert</Text>,
+              <Text key={2} style={styles.messageBoxBodyText}>You aren't currently participating in a BRICK Event.</Text>]
+            }
+            
           </View>
         </View>
         {/* Defining Button QR Code */}
@@ -53,6 +60,7 @@ class CurrentEvents extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
+    event: getCurrentEvent(state),
   }
 }
 
